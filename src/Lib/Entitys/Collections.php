@@ -8,11 +8,9 @@ namespace Websyspro\NestPhp\Lib\Entitys
   use Websyspro\NestPhp\Lib\Entitys\Abstract\EntityForeign;
   use Websyspro\NestPhp\Lib\Entitys\Abstract\EntityProperty;
   use Websyspro\NestPhp\Lib\Entitys\Abstract\PersistedList;
-    use Websyspro\NestPhp\Lib\Entitys\Base\ProductEntity;
-    use Websyspro\NestPhp\Lib\Entitys\Designs\DesignList;
-    use Websyspro\NestPhp\Lib\Entitys\Enums\PropertyEntity;
-    use Websyspro\NestPhp\Lib\Entitys\Enums\PropertyType;
-    use Websyspro\NestPhp\Lib\Entitys\Persisteds\PersistedCollections;
+  use Websyspro\NestPhp\Lib\Entitys\Designs\DesignList;
+  use Websyspro\NestPhp\Lib\Entitys\Enums\PropertyEntity;
+  use Websyspro\NestPhp\Lib\Entitys\Persisteds\PersistedCollections;
   use Websyspro\NestPhp\Lib\Logger\Message;
 
   class Collections

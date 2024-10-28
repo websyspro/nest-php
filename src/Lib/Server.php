@@ -88,6 +88,7 @@ namespace Websyspro\NestPhp\Lib
     private function migration(
       string $isExecuted
     ): void {
+      var_dump($isExecuted);
       if ( $isExecuted === "yes" || $isExecuted === "1" ) {
         ( new Collections())->add(
           $this->entitysArr
