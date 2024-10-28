@@ -3,6 +3,7 @@
 namespace Websyspro\NestPhp\Lib\Database
 {
   use Exception;
+    use Websyspro\NestPhp\Lib\Logger\Message;
 
   class DB
   {
@@ -112,6 +113,7 @@ namespace Websyspro\NestPhp\Lib\Database
     public static function query(
       string | array $commandSql
     ): DB {
+      Message::success( $commandSql );
       return new static(
         $commandSql
       );
