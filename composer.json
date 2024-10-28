@@ -1,0 +1,17 @@
+{
+    "name": "websyspro/nest-php",
+    "description": "Backend feature set in PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Websyspro\\NestPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "websyspro",
+            "email": "cpd.emersontsa@gmail.com"
+        }
+    ],
+    "require": {}
+}
