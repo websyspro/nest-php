@@ -48,7 +48,7 @@ namespace Websyspro\NestPhp\Lib\Dataset
     ): string {
       return sprintf(
         "from %s.%s",
-        $this->APP_ENVS("name"), Utils::entityName(
+        $this->envs("name"), Utils::entityName(
           $this->entity
         )
       );
