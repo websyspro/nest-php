@@ -94,11 +94,6 @@ namespace Websyspro\NestPhp\Lib\Data
       );
     }
 
-    private static function createParams(
-    ): void {
-      print_r("");
-    }
-
     private static function loadFromPostData(
       array $data,
       string $type

@@ -65,7 +65,6 @@ namespace Websyspro\NestPhp\Lib\Entitys
 
     private function setEntitysCreateds(
     ): void {
-      print_r($this->designs);
       Utils::mapper(
         $this->designs,
         function( DesignList $designList ): void {

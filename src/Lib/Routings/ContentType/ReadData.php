@@ -11,15 +11,6 @@ use Websyspro\NestPhp\Lib\Routings\ContentType\Enums\ContentTypes;
 
     public function __construct(){
       $this->readDataLoad();
-
-      // $fgets = fgets(
-      //   $this->contentFile(),
-      //   4096
-      // );
-
-      // print_r($fgets);
-      // print_r($_POST);
-      // print_r($_FILES);
     }
     private function readDataLoad(
     ): void {
@@ -29,8 +20,6 @@ use Websyspro\NestPhp\Lib\Routings\ContentType\Enums\ContentTypes;
             $this->contentFile()
           ) : $_POST;
       }
-
-      print_r( $this->fieldsArr );
     }
   }
 }
