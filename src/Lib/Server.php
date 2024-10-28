@@ -22,16 +22,17 @@ namespace Websyspro\NestPhp\Lib
       private array $entitysArr,
       private array $contextsArr,
     ){
-      $this->args();
       $this->init();
+      $this->args();
       $this->search();
     }
 
     private function init(
     ): void {
+      Message::Start();
+
       if ( $this->isArgc() === false ) {
         Server::ctts();
-        Message::Start();
         DataLoad::create();
       }
     }
