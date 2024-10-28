@@ -6,8 +6,8 @@ use Websyspro\NestPhp\Lib\Routings\ContentType\Enums\ContentMethod;
 use Websyspro\NestPhp\Lib\Routings\ContentType\Enums\ContentTypes;
   class ReadData extends ReadUtils
   {
-    private array $fieldsArr = [];
-    private array $filesArr = [];
+    public array $fieldsArr = [];
+    // private array $filesArr = [];
 
     public function __construct(){
       $this->readDataLoad();
