@@ -34,7 +34,7 @@ namespace Websyspro\NestPhp\Lib\Entitys\Persisteds
     private function loadEnvs(
     ): array {
       parse_str(
-        ENVS, $envs
+        APP_ENVS, $envs
       );
       
       return $envs;

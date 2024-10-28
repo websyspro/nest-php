@@ -28,7 +28,7 @@ namespace Websyspro\NestPhp\Lib\Database
 
     private function envs(
     ): array {
-      parse_str(ENVS, $envs);
+      parse_str(APP_ENVS, $envs);
       return $envs;
     }
 

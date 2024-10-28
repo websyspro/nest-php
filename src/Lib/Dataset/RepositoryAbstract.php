@@ -34,7 +34,7 @@ namespace Websyspro\NestPhp\Lib\Dataset
     public function envs(
       string $key
     ): string {
-      parse_str(ENVS, $envs);
+      parse_str(APP_ENVS, $envs);
       return $envs[ $key ];
     }
 
