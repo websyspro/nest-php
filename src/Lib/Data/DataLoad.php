@@ -15,7 +15,6 @@ namespace Websyspro\NestPhp\Lib\Data
       static::createData();
       static::createBody();
       static::createQuery();
-      static::createParams();
 
       return new static();
     }
