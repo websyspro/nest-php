@@ -113,7 +113,7 @@ namespace Websyspro\NestPhp\Lib\Database
     public static function query(
       string | array $commandSql
     ): DB {
-      Message::success( $commandSql );
+      var_dump( $commandSql );
       return new static(
         $commandSql
       );
