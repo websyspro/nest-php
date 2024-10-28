@@ -22,16 +22,18 @@ namespace Websyspro\NestPhp\Lib
       private array $entitysArr,
       private array $contextsArr,
     ){
+      $this->args();
       $this->init();
-      $this->executeArgv();
       $this->search();
     }
 
     private function init(
     ): void {
-      Server::ctts();
-      Message::Start();
-      DataLoad::create();
+      if ( $this->isArgc() === false ) {
+        Server::ctts();
+        Message::Start();
+        DataLoad::create();
+      }
     }
 
     private function ctts(
@@ -49,10 +51,10 @@ namespace Websyspro\NestPhp\Lib
       }
 
       [ "argc" => $argc ] = $_SERVER;
-      return $argc !== 1;
+      return $argc === 2;
     }
 
-    private function executeArgv(
+    private function args(
     ): void {
       if ( $this->isArgc() === true ) {
         [ "argv" => $argv ] = $_SERVER;
@@ -99,23 +101,25 @@ namespace Websyspro\NestPhp\Lib
 
     private function search(
     ): void {
-      $this->controllers = new Controllers(
-        Utils::mapper(
-          array_merge(
-            $this->controllersArr, [
-              AuthenticateController::class,
-              ContextController::class
-            ]
+      if ( $this->isArgc() === false ) {
+        $this->controllers = new Controllers(
+          Utils::mapper(
+            array_merge(
+              $this->controllersArr, [
+                AuthenticateController::class,
+                ContextController::class
+              ]
+            ),
+            fn( string $controller ) => (
+              new ControllerDetails( $controller )
+            )
           ),
-          fn( string $controller ) => (
-            new ControllerDetails( $controller )
-          )
-        ),
-        new Response()
-      );
-
-      if ( $this->isSearch() ) {
-        $this->controllers->search();
+          new Response()
+        );
+  
+        if ( $this->isSearch() ) {
+          $this->controllers->search();
+        }
       }
     }
 
