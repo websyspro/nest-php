@@ -6,7 +6,7 @@ namespace Websyspro\NestPhp\Lib\Dataset\Persisted
   use Websyspro\NestPhp\Lib\Database\DB;
   use Websyspro\NestPhp\Lib\Dataset\Persisted\Abstract\Persisted;
   use Websyspro\NestPhp\Lib\Dataset\Persisted\Enums\PersistedType;
-    use Websyspro\NestPhp\Lib\Routings\Error;
+  use Websyspro\NestPhp\Lib\Routings\Error;
 
   class Delete extends Persisted
   {
@@ -56,7 +56,7 @@ namespace Websyspro\NestPhp\Lib\Dataset\Persisted
     }
 
     public function setPersisteds(
-    ): string {
+    ): int {
       $this->setUpdateList();
       $this->setWheresList();
 
@@ -78,7 +78,7 @@ namespace Websyspro\NestPhp\Lib\Dataset\Persisted
         );
       }
 
-      return "register deleted with success";
+      return 1;
     }
   }
 }

@@ -12,7 +12,7 @@ namespace Websyspro\NestPhp\Lib\Dataset\Persisted
     public PersistedType $persistedType = PersistedType::Created;
 
     public function setPersisteds(
-    ): string {
+    ): int {
       $persisteds = DB::query(
         "insert into {$this->getEntity()} ({$this->getNames()}) values({$this->getValues()})"
       );
@@ -23,7 +23,7 @@ namespace Websyspro\NestPhp\Lib\Dataset\Persisted
         );
       }
 
-      return "register created with success.";
+      return $persisteds->getLastId();
     }
   }
 }

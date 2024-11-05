@@ -56,7 +56,7 @@ namespace Websyspro\NestPhp\Lib\Dataset\Persisted
     }
 
     public function setPersisteds(
-    ): string {
+    ): int {
       $this->setUpdateList();
       $this->setWheresList();
 
@@ -78,7 +78,7 @@ namespace Websyspro\NestPhp\Lib\Dataset\Persisted
         );
       }
 
-      return "register updated with success";
+      return 1;
     }
   }
 }
