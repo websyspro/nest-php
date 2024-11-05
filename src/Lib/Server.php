@@ -135,12 +135,14 @@ namespace Websyspro\NestPhp\Lib
     public static function create(
       array $controllers = [],
       array $entitys = [],
-      array $contexts = []
+      array $contexts = [],
+      mixed $init =null
     ): Server {
       return new static(
         $controllers,
         $entitys,
-        $contexts
+        $contexts,
+        $init
       );
     }
   }
