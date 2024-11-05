@@ -16,14 +16,16 @@ namespace Websyspro\NestPhp\Lib\Routings\Decorations
     ){}
 
     public function execute(
-    ): array | string {
+    ): array | string | object | null {
       if ( $this->key !== null ) {
-        if ( isset( DataLoad::$data["PARAM"][$this->key] )){
+        if ( isset( DataLoad::$data["PARAM"][$this->key] )) {
           return DataLoad::$data["PARAM"][$this->key];
+        } else {
+          return null;
         }
       }
 
-      return DataLoad::$data["QUERY"];
+      return DataLoad::$data["PARAM"];
     }
   }
 }
