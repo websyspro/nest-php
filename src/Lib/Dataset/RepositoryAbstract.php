@@ -46,7 +46,7 @@ namespace Websyspro\NestPhp\Lib\Dataset
 
     public function create(
       array $data = []
-    ): string {
+    ): int {
       return ( new Create(
         $this->entity,
         $data
@@ -55,7 +55,7 @@ namespace Websyspro\NestPhp\Lib\Dataset
 
     public function update(
       array $data = []
-    ): string {
+    ): int {
       return ( new Update(
         $this->entity,
         $data
@@ -64,7 +64,7 @@ namespace Websyspro\NestPhp\Lib\Dataset
 
     public function delete(
       array $data = []
-    ): string {
+    ): int {
       return ( new Delete(
         $this->entity,
         $data
