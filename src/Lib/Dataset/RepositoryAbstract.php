@@ -41,7 +41,7 @@ namespace Websyspro\NestPhp\Lib\Dataset
     public static function entity(
       string $entity
     ): Repository {
-      return new static( $entity );
+      return new Repository( $entity );
     }
 
     public function create(
