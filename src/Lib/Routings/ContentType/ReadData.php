@@ -2,8 +2,8 @@
 
 namespace Websyspro\NestPhp\Lib\Routings\ContentType
 {
-use Websyspro\NestPhp\Lib\Routings\ContentType\Enums\ContentMethod;
-use Websyspro\NestPhp\Lib\Routings\ContentType\Enums\ContentTypes;
+  use Websyspro\NestPhp\Lib\Routings\ContentType\Enums\ContentMethod;
+  use Websyspro\NestPhp\Lib\Routings\ContentType\Enums\ContentTypes;
   class ReadData extends ReadUtils
   {
     public array $fieldsArr = [];

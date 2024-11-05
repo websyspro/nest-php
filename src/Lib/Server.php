@@ -21,16 +21,16 @@ namespace Websyspro\NestPhp\Lib
       private array $controllersArr,
       private array $entitysArr,
       private array $contextsArr,
+      private mixed $init = null
     ){
-      $this->init();
+      $this->run();
       $this->args();
       $this->search();
     }
 
-    private function init(
+    private function run(
     ): void {
       Message::Start();
-
       if ( $this->isArgc() === false ) {
         Server::ctts();
         DataLoad::create();
@@ -79,6 +79,14 @@ namespace Websyspro\NestPhp\Lib
             
             if ( $executed === "migration" ){
               $this->migration( $isExecuted );
+            }
+
+            if ( $executed === "init" ){
+              if ( is_callable( $this->init )) {
+                if ( $isExecuted === "yes" || $isExecuted === "1" ) {
+                  call_user_func( $this->init, []);
+                }
+              }
             }
           }
         );
