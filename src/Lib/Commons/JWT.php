@@ -508,7 +508,8 @@ namespace Websyspro\NestPhp\Lib\Commons
     public static function createJwtToken(
       array $data = [],
       int $expiration = 3600,
-      string | null $domain = null
+      string | null $domain = null,
+      string $jwtKey = null
     ): string {
       return  JWT::encode(
         [
@@ -517,7 +518,7 @@ namespace Websyspro\NestPhp\Lib\Commons
           'iat' => time(),
           'exp' => time() + $expiration,
           'data' => $data
-        ], JWT_KEY, "HS256"
+        ], $jwtKey ?? APP_JWT_KEY, "HS256"
       );
     }
   }
