@@ -8,9 +8,8 @@ namespace Websyspro\NestPhp\Lib\Dataset
   use Websyspro\NestPhp\Lib\Dataset\Persisted\Update;
   use Websyspro\NestPhp\Lib\Dataset\Sqls\Enums\FindType;
   use Websyspro\NestPhp\Lib\Dataset\Sqls\FindList;
-    use Websyspro\NestPhp\Lib\Entitys\Abstract\EntityProperty;
-    use Websyspro\NestPhp\Lib\Entitys\Designs\DesignList;
-    use Websyspro\NestPhp\Lib\Entitys\Enums\PropertyEntity;
+  use Websyspro\NestPhp\Lib\Entitys\Designs\DesignList;
+  use Websyspro\NestPhp\Lib\Entitys\Enums\PropertyEntity;
 
   class RepositoryAbstract
   {

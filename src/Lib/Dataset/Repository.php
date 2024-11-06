@@ -318,6 +318,11 @@ namespace Websyspro\NestPhp\Lib\Dataset
       ];
     }
 
+    public function Exist(
+    ): bool {
+      return static::Count() !== 0;
+    }
+
     public function all(
     ): array {
       $recodset = DB::query(
