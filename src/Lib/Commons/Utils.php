@@ -89,6 +89,16 @@ namespace Websyspro\NestPhp\Lib\Commons
         Error::badRequest( $message ?? "The '{$key}' field is required." );
       }
     }
+
+    public static function defaultValue(
+      array &$source,
+      string $key,
+      mixed $value
+    ): void {
+      if ( isset( $source[ $key ]) === false || empty( $source[ $key ] )) {
+        $source[ $key ] = $value;
+      }
+    }
     
     public static function guid(
     ): string {
