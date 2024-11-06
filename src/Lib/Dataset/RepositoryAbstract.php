@@ -8,7 +8,9 @@ namespace Websyspro\NestPhp\Lib\Dataset
   use Websyspro\NestPhp\Lib\Dataset\Persisted\Update;
   use Websyspro\NestPhp\Lib\Dataset\Sqls\Enums\FindType;
   use Websyspro\NestPhp\Lib\Dataset\Sqls\FindList;
-  use Websyspro\NestPhp\Lib\Entitys\Designs\DesignList;
+    use Websyspro\NestPhp\Lib\Entitys\Abstract\EntityProperty;
+    use Websyspro\NestPhp\Lib\Entitys\Designs\DesignList;
+    use Websyspro\NestPhp\Lib\Entitys\Enums\PropertyEntity;
 
   class RepositoryAbstract
   {
@@ -108,11 +110,19 @@ namespace Websyspro\NestPhp\Lib\Dataset
     public function find(
       string | int | array $findArr
     ): Repository {
-      $this->findListArr[] = $this->createFindList(
-        $this->entity,
-        $findArr,
-        FindType::FindAnd
-      );
+      if ( is_array( $findArr )) {
+        $this->findListArr[] = $this->createFindList(
+          $this->entity,
+          $findArr,
+          FindType::FindAnd
+        );
+      } elseif ( is_string( $findArr ) || is_numeric( $findArr )) {
+        $this->findListArr[] = $this->createFindList(
+          $this->entity,
+          [ PropertyEntity::Id->value => $findArr ],
+          FindType::FindAnd
+        );
+      }
 
       return $this;
     }
