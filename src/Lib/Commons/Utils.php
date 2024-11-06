@@ -95,8 +95,6 @@ namespace Websyspro\NestPhp\Lib\Commons
       string $key,
       mixed $value
     ): void {
-      var_dump($source);
-
       if ( isset( $source[ $key ]) === false || empty( $source[ $key ] )) {
         $source = Utils::arrayMerge(
           $source, [ $key => $value ]
