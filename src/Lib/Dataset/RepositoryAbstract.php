@@ -65,12 +65,12 @@ namespace Websyspro\NestPhp\Lib\Dataset
     }
 
     public function delete(
-      array | string | int $data = []
+      array | string | int $value = []
     ): int {
       return ( new Delete(
         $this->entity,
-        is_array( $data )
-          ? $data : [ PropertyEntity::Id->value => $data ]
+        is_array( $value )
+          ? $value : [ PropertyEntity::Id->value => $value ]
       ))->setPersisteds();
     }
 
