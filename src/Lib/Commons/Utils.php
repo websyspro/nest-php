@@ -81,11 +81,12 @@ namespace Websyspro\NestPhp\Lib\Commons
     }
 
     public static function isValid(
-      mixed $value,
-      string $message
+      array $source,
+      mixed $key,
+      string $message = null
     ): void {
-      if ( isset( $value) === false || empty( $value )) {
-        Error::badRequest( $message );
+      if ( isset( $source[ $key ]) === false || empty( $source[ $key ] )) {
+        Error::badRequest( $message ?? "The '{$key}' field is required." );
       }
     }
     
