@@ -27,7 +27,7 @@ namespace Websyspro\NestPhp\Lib\Routings\Controllers
               'nome' => $username,
               'email' => $password
             ]
-          ], JWT_KEY, "HS256"
+          ], APP_JWT_KEY, "HS256"
         )
       ];
     }

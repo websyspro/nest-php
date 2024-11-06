@@ -12,6 +12,10 @@ namespace Websyspro\NestPhp\Lib\Routings\Decorations\Middlewares
   {
     public DecorationType $decorationType = DecorationType::Middleware;
 
+    public function __construct(
+      private string | null $jwtKey = null
+    ){}
+
     public function execute(
     ): void {
       if ( isset( $_SERVER[ "HTTP_AUTHORIZATION" ]) === false ) {
@@ -39,7 +43,7 @@ namespace Websyspro\NestPhp\Lib\Routings\Decorations\Middlewares
 
       $jwtDecode = JWT::decode(
         $authorizationJWT,
-        JWT_KEY,
+        $this->jwtKey ?? APP_JWT_KEY,
         [ "HS256" ]
       );
 
