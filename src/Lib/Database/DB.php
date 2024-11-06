@@ -8,7 +8,7 @@ namespace Websyspro\NestPhp\Lib\Database
   class DB
   {
     private object $handle;
-    private mixed $record;
+    private mixed $record = null;
     private string $error = "";
 
     public function __construct(
