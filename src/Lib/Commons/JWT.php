@@ -504,6 +504,22 @@ namespace Websyspro\NestPhp\Lib\Commons
         $str
       );
     }
+
+    private static function createJwtToken(
+      array $data = [],
+      int $expiration = 3600,
+      string | null $domain = null
+    ): string {
+      return  JWT::encode(
+        [
+          'iss' => $domain ?? "sso.websyspro.com.br",
+          'aud' => $domain ?? "sso.websyspro.com.br",
+          'iat' => time(),
+          'exp' => time() + $expiration,
+          'data' => $data
+        ], JWT_KEY, "HS256"
+      );
+    }
   }
 }
 
