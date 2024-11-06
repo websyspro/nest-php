@@ -65,7 +65,7 @@ namespace Websyspro\NestPhp\Lib\Dataset
     }
 
     public function delete(
-      array $data = []
+      array | string | int $data = []
     ): int {
       return ( new Delete(
         $this->entity,
