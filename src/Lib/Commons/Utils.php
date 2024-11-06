@@ -91,13 +91,17 @@ namespace Websyspro\NestPhp\Lib\Commons
     }
 
     public static function defaultValue(
-      array &$source,
+      array $source,
       string $key,
       mixed $value
-    ): void {
+    ): array {
       if ( isset( $source[ $key ]) === false || empty( $source[ $key ] )) {
-        $source[ $key ] = $value;
+        return Utils::arrayMerge(
+          $source, [ $key => $value ]
+        );
       }
+
+      return $source;
     }
     
     public static function guid(
