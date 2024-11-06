@@ -505,7 +505,7 @@ namespace Websyspro\NestPhp\Lib\Commons
       );
     }
 
-    private static function createJwtToken(
+    public static function createJwtToken(
       array $data = [],
       int $expiration = 3600,
       string | null $domain = null
