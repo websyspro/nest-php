@@ -509,7 +509,7 @@ namespace Websyspro\NestPhp\Lib\Commons
       array $data = [],
       int $expiration = 3600,
       string | null $domain = null,
-      string $jwtKey = null
+      string | null $jwtKey = null
     ): string {
       return  JWT::encode(
         [
