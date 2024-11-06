@@ -4,6 +4,7 @@ namespace Websyspro\NestPhp\Lib\Commons
 {
   use ReflectionFunction;
     use Websyspro\NestPhp\Lib\Data\DataLoad;
+    use Websyspro\NestPhp\Lib\Routings\Error;
 
   class Utils extends UtilsArrays
   {
@@ -77,6 +78,15 @@ namespace Websyspro\NestPhp\Lib\Commons
           )
         ), 0, 32
       );
+    }
+
+    public static function isValid(
+      mixed $value,
+      string $message
+    ): void {
+      if ( isset( $value) === false || empty( $value )) {
+        Error::badRequest( $message );
+      }
     }
     
     public static function guid(
