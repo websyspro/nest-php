@@ -73,7 +73,7 @@ namespace Websyspro\NestPhp\Lib\Commons
               "qazwsxedcrfvtgbyhnujmikolp",
               "QAZWSXEDCRFVTGBYHNUJMIKOLP",
               "01234567890"
-            ]
+            ], ""
           )
         ), 0, 32
       );
