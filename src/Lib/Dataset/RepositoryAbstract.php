@@ -56,11 +56,13 @@ namespace Websyspro\NestPhp\Lib\Dataset
 
     public function update(
       array $data = []
-    ): int {
-      return ( new Update(
+    ): Repository {
+      ( new Update(
         $this->entity,
         $data
       ))->setPersisteds();
+
+      return $this;
     }
 
     public function delete(
