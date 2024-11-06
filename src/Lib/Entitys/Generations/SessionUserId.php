@@ -7,7 +7,7 @@ namespace Websyspro\NestPhp\Lib\Entitys\Generations
   class SessionUserId
   {
     public function execute(): string {
-      return "1";
+      return Utils::getUserId();
     }
   }
 }
