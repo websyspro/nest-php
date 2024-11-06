@@ -63,6 +63,21 @@ namespace Websyspro\NestPhp\Lib\Commons
         "USER"
       ][ "id" ];
     }
+
+    public static function getRandKey(
+    ): string {
+      return substr(
+        str_shuffle(
+          static::join(
+            [
+              "qazwsxedcrfvtgbyhnujmikolp",
+              "QAZWSXEDCRFVTGBYHNUJMIKOLP",
+              "01234567890"
+            ]
+          )
+        ), 0, 32
+      );
+    }
     
     public static function guid(
     ): string {
