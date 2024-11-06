@@ -69,7 +69,8 @@ namespace Websyspro\NestPhp\Lib\Dataset
     ): int {
       return ( new Delete(
         $this->entity,
-        $data
+        is_array( $data )
+          ? $data : [ PropertyEntity::Id->value => $data ]
       ))->setPersisteds();
     }
 
