@@ -55,7 +55,7 @@ namespace Websyspro\NestPhp\Lib\Routings\Decorations\Middlewares
       }
 
       DataLoad::$data[ "USER" ] = [
-        "id" => $jwtDecode->data[ "id" ]
+        "id" => $jwtDecode->data->id
       ];
     }
   }
