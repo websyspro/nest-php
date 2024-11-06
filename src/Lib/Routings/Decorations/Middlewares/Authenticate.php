@@ -4,7 +4,8 @@ namespace Websyspro\NestPhp\Lib\Routings\Decorations\Middlewares
 {
   use Attribute;
   use Websyspro\NestPhp\Lib\Commons\JWT;
-  use Websyspro\NestPhp\Lib\Routings\Enums\DecorationType;
+    use Websyspro\NestPhp\Lib\Data\DataLoad;
+    use Websyspro\NestPhp\Lib\Routings\Enums\DecorationType;
   use Websyspro\NestPhp\Lib\Routings\Error;
 
   #[Attribute( Attribute::TARGET_CLASS )]
@@ -52,6 +53,10 @@ namespace Websyspro\NestPhp\Lib\Routings\Decorations\Middlewares
           "Expired token"
         );
       }
+
+      DataLoad::$data[ "USER" ] = [
+        "id" => $jwtDecode->data[ "id" ]
+      ];
     }
   }
 }

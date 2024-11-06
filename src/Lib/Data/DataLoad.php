@@ -76,7 +76,8 @@ namespace Websyspro\NestPhp\Lib\Data
         "BODY" => [],
         "QUERY" => [],
         "PARAM" => [],
-        "FILES" => []
+        "FILES" => [],
+        "USER" => []
       ];
     }
 

@@ -3,6 +3,7 @@
 namespace Websyspro\NestPhp\Lib\Commons
 {
   use ReflectionFunction;
+    use Websyspro\NestPhp\Lib\Data\DataLoad;
 
   class Utils extends UtilsArrays
   {
@@ -54,6 +55,13 @@ namespace Websyspro\NestPhp\Lib\Commons
     public static function now(
     ): string {
       return date("Y-m-d H:i:s");
+    }
+
+    public static function getUserId(
+    ): int {
+      return (int)DataLoad::$data[
+        "USER"
+      ][ "id" ];
     }
     
     public static function guid(
